@@ -27,7 +27,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       height: 8.0,
       width: isActive ? 24.0 : 16.0,
       decoration: BoxDecoration(
-        color: isActive ? Colors.white : Color(0xFF7B51D3),
+        color: isActive ? Colors.white : Color(0xFF95BBE3),
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
     );
@@ -43,12 +43,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-
               colors: [
-                Color(0xFF3594DD),
-                Color(0xFF4563DB),
-                Color(0xFF5036D5),
-                Color(0xFF5B16D0),
+                Color(0xFF404E7C),
+                Color(0xFF251F47),
+                Color(0xFF260F26),
               ],
             ),
           ),
@@ -64,7 +62,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: Text(
                       'Skip',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Color(0xFF71B48D),
                         fontSize: 20.0,
                       ),
                     ),
@@ -171,37 +169,37 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 _currentPage != _numPages - 1
                     ? Expanded(
-                  child: Align(
-                    alignment: FractionalOffset.bottomRight,
-                    child: FlatButton(
-                      onPressed: () {
-                        _pageController.nextPage(
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.ease,
-                        );
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          Text(
-                            'Next',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 22.0,
+                        child: Align(
+                          alignment: FractionalOffset.bottomRight,
+                          child: FlatButton(
+                            onPressed: () {
+                              _pageController.nextPage(
+                                duration: Duration(milliseconds: 500),
+                                curve: Curves.ease,
+                              );
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Text(
+                                  'Next',
+                                  style: TextStyle(
+                                    color: Color(0xFF71B48D),
+                                    fontSize: 22.0,
+                                  ),
+                                ),
+                                //SizedBox(width: 10.0),
+                                Icon(
+                                  Icons.arrow_forward,
+                                  color: Color(0xFF71B48D),
+                                  size: 30.0,
+                                ),
+                              ],
                             ),
                           ),
-                          //SizedBox(width: 10.0),
-                          Icon(
-                            Icons.arrow_forward,
-                            color: Colors.white,
-                            size: 30.0,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                )
+                        ),
+                      )
                     : Text(''),
               ],
             ),
@@ -210,26 +208,26 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
       bottomSheet: _currentPage == _numPages - 1
           ? Container(
-        height: 80.0,
-        width: double.infinity,
-        color: Colors.white,
-        child: GestureDetector(
-          onTap: () => print('Get started'),
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 30.0),
-              child: Text(
-                'Get started',
-                style: TextStyle(
-                  color: Color(0xFF5B16D0),
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+              height: 80.0,
+              width: double.infinity,
+              color: Color(0xFF95BBE3),
+              child: GestureDetector(
+                onTap: () => print('Get started'),
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 30.0),
+                    child: Text(
+                      'Get started',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-        ),
-      )
+            )
           : Text(''),
     );
   }
