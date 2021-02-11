@@ -6,7 +6,7 @@ A  Onboarding Application using Flutter/Dart
 
 Different screens, progress bar, illustrations.
 
-![](assets/images/my_video.mov)
+![](assets/gif.gif)
 
 > If you found this source code helpful or want to help me in my studies, consider buying me a cup of :coffee:
 >
