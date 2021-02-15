@@ -1,6 +1,6 @@
 # Onboarding Screen
 
-A  Onboarding Application using Flutter/Dart
+A  Onboarding Application using Flutter/Dart with modern dark mode UI.
 
 ## Getting Started
 
