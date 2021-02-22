@@ -138,11 +138,11 @@ class StepperValidationState extends State<StepperValidation> {
                 isValid: true,
               )
             ],
-            selectedColor: TheBaseColors.lightGreen,
+            selectedColor: Colors.lightGreen,
             unSelectedColor: Colors.grey.shade400,
-            leftBtnColor: TheBaseColors.lightGreen,
-            rightBtnColor: TheBaseColors.lightBlue,
-            selectedOuterCircleColor:TheBaseColors.lightBlue,
+            leftBtnColor: Colors.lightGreen,
+            rightBtnColor: Colors.lightBlue,
+            selectedOuterCircleColor: Colors.lightBlue,
             type: Type.TOP,
             circleRadius: 30,
             onComplete: () {
