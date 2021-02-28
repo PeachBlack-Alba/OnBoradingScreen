@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:thebase_app/ui/styles/Colors.dart';
+import 'dart:core';
 
 class LanguageScreen extends StatefulWidget {
   @override
@@ -19,9 +21,18 @@ class ListSearch extends StatefulWidget {
 }
 
 class ListSearchState extends State<ListSearch> {
-  TextEditingController _textController = TextEditingController();
+  final TextEditingController _textController = TextEditingController();
 
-  // var selectedLanguage = SelectedLanguage();
+  Map<String, String> dictionary = {
+    'Spanish': 'SP',
+    'Italian': 'IT',
+    'German': 'DE',
+    'Arab': 'AR',
+    'Greek': 'GR',
+    'Thai': 'TH',
+    'Chinese': 'CH',
+    'French': 'FR'
+  };
 
   List<Language> languages = <Language>[
     Language(
@@ -58,12 +69,18 @@ class ListSearchState extends State<ListSearch> {
     )
   ];
 
-  List<String> newDataList = List.from(Language);
+  List<Language> newDataList;
 
   onItemChanged(String value) {
     setState(() {
-      newDataList = languages.where((string) => string.toLowerCase().contains(value.toLowerCase())).toList();
+      newDataList = languages.where((lang) => lang.title.toLowerCase().contains(value.toLowerCase())).toList();
     });
+  }
+
+  @override
+  initState() {
+    super.initState();
+    newDataList = [...languages];
   }
 
   @override
@@ -74,7 +91,6 @@ class ListSearchState extends State<ListSearch> {
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: TextField(
-              textInputAction: TextInputAction.continueAction,
               controller: _textController,
               decoration: InputDecoration(
                 icon: Icon(Icons.search),
@@ -87,18 +103,29 @@ class ListSearchState extends State<ListSearch> {
             child: ListView(
               padding: EdgeInsets.all(12.0),
               children: newDataList.map((data) {
-                return ListTile(
-                    title: Text(data),
-                    onTap: () {
-                      setState(() {
-                        Language.selected = !Language.selected;
+                return Ink(
+                  color: data.selected ? TheBaseColors.lightGreen : Colors.transparent,
+                  child: ListTile(
+                      title: Text(data.title),
+                      onTap: () {
+                        setState(() {
+                          data.selected = !data.selected;
 
-                        print(Language[index].selected.toString());
-                      });
-                    });
+                          print("${data.title} is now ${data.selected ? "selected" : "not selected"}");
+                          print(dictionary[data.title]);
+                        });
+                      }),
+                );
               }).toList(),
             ),
-          )
+          ),
+          Expanded(
+              child: Column(children: [
+                Text('Selected languages :'),
+                Expanded(
+                    child: ListView(
+                        children: newDataList.where((l) => l.selected).map((l) => Padding(child: Text(l.title), padding: EdgeInsets.only(right: 10))).toList()))
+              ]))
         ],
       ),
     );
@@ -112,3 +139,4 @@ class Language {
 
   Language(this.id, this.title);
 }
+
