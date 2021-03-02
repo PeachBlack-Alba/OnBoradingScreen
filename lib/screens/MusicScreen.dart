@@ -93,7 +93,7 @@ class ListSearchState extends State<ListSearch> {
               padding: EdgeInsets.all(12.0),
               children: newDataList.map((data) {
                 return Ink(
-                  color: data.selected ? TheBaseColors.lightGreen : Colors.transparent,
+                  color: data.selected ? Colors.lightGreen : Colors.transparent,
 
                   child: ListTile(
                       title: Text(data.title),

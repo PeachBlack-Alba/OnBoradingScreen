@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:thebase_app/ui/screens/profile/onboarding/questions/InterestsHobbies.dart';
-import 'package:thebase_app/ui/screens/profile/onboarding/stepper/Stepper.dart';
-import 'package:thebase_app/ui/styles/Colors.dart';
+import 'InterestHobbies.dart';
+import 'Stepper.dart';
 
 class Questions extends StatelessWidget {
   @override
@@ -56,11 +55,11 @@ class Questions extends StatelessWidget {
               )
 
             ],
-            selectedColor: TheBaseColors.lightGreen,
+            selectedColor: Colors.lightGreen,
             unSelectedColor: Colors.grey.shade400,
-            leftBtnColor: TheBaseColors.lightBlue,
-            rightBtnColor: TheBaseColors.lightGreen,
-            selectedOuterCircleColor:TheBaseColors.lightBlue,
+            leftBtnColor: Colors.lightBlue,
+            rightBtnColor: Colors.lightGreen,
+            selectedOuterCircleColor:Colors.lightBlue,
             type: Type.TOP,
             circleRadius: 30,
             onComplete: () {

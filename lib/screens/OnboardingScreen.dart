@@ -27,7 +27,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       height: 8.0,
       width: isActive ? 24.0 : 16.0,
       decoration: BoxDecoration(
-        color: isActive ? Colors.white : Color(0xFF95BBE3),
+        color: isActive ? Colors.white : Color(0xFF71B48D),
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
     );
@@ -210,7 +210,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ? Container(
               height: 80.0,
               width: double.infinity,
-              color: Color(0xFF95BBE3),
+              color: Color(0xFF71B48D),
               child: GestureDetector(
                 onTap: () => print('Get started'),
                 child: Center(
