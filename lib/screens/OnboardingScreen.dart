@@ -100,7 +100,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ),
                             SizedBox(height: 10.0),
                             Text(
-                              'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+                              'Lorem ipsum dolor sit amet, connect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
                               style: kSubtitleStyle,
                             ),
                           ],
