@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onBoarding/screens/OnboardingScreen.dart';
 import 'InterestHobbies.dart';
 import 'Stepper.dart';
 
@@ -64,6 +65,10 @@ class Questions extends StatelessWidget {
             circleRadius: 30,
             onComplete: () {
               print('completed');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => OnboardingScreen()),
+              );
             },
             textStyle: TextStyle(
               fontSize: 14,
