@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:onBoarding/ui/styles.dart';
 
-import 'Questions.dart';
 
 class OnboardingScreen extends StatefulWidget {
   @override
@@ -215,10 +214,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               color: Color(0xFF71B48D),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Questions()),
-                  );
+
                 },
                 child: Center(
                   child: Padding(
